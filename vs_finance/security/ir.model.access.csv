@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vs_cost_categories,access_vs_cost_categories,model_vs_cost_categories,base.group_user,1,1,1,1
+access_vs_purpose_accumulation,access_vs_purpose_accumulation,model_vs_purpose_accumulation,base.group_user,1,1,1,1
+access_vs_sources_income,access_vs_sources_income,model_vs_sources_income,base.group_user,1,1,1,1
+access_vs_bills,access_vs_bills,model_vs_bills,base.group_user,1,1,1,1
