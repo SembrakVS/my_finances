@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id='main_group_menu'
+              name="My Finance" sequence="10"
+              web_icon="vs_finance/static/description/icon.png"/>
+
+    <menuitem id='costs_group_menu'
+              parent="main_group_menu"
+              name="Costs menu" sequence="20"/>
+
+    <menuitem id='income_group_menu'
+              parent="main_group_menu"
+              name="Income menu" sequence="20"/>
+
+    <menuitem id='other_group_menu'
+              parent="main_group_menu"
+              name="Other" sequence="30"/>
+</odoo>

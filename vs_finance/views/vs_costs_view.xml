@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="vs_costs_form_view" model="ir.ui.view">
+            <field name="name">vs_costs.form</field>
+            <field name="model">vs_costs</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                            </group>
+                            <group>
+                                <field name="sum"/>
+                                <field name="name"/>
+                                <field name="bill"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vs_costs_tree_view" model="ir.ui.view">
+            <field name="name">vs_costs.tree</field>
+            <field name="model">vs_costs</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="costs"/>
+                    <field name="name"/>
+                    <field name="sum"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="vs_costs_search_view" model="ir.ui.view">-->
+<!--            <field name="name">vs_costs.search</field>-->
+<!--            <field name="model">vs_costs</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="ModelTitle">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="vs_costs_act_window" model="ir.actions.act_window">
+            <field name="name">ModelTitle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vs_costs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Costs" id="vs_costs_menu" parent="costs_group_menu" action="vs_costs_act_window"/>
+
+    </data>
+</odoo>

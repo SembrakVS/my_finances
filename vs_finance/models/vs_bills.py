@@ -1,8 +1,9 @@
 from odoo import fields, models
 
 
-class ModelName(models.Model):
-    _name = 'ProjectName.TableName'
-    _description = 'Description'
+class Bills(models.Model):
+    _name = 'vs.bills'
+    _description = 'Bills'
+    _inherit = 'account.account'
 
     name = fields.Char()
