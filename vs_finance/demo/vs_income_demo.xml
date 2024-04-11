@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Demo Data for Incomes -->
+        <record id="income_demo_1" model="vs.income">
+            <field name="operation_date">2024-04-01 08:00:00</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="sum">500.00</field>
+            <field name="description">Income 1</field>
+            <field name="category" ref="income_category_salary"/>
+            <field name="source_income">salary</field>
+        </record>
+
+        <record id="income_demo_2" model="vs.income">
+            <field name="operation_date">2024-04-05 12:00:00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="sum">750.50</field>
+            <field name="description">Income 2</field>
+            <field name="category" ref="income_category_dividends"/>
+            <field name="source_income">deposits</field>
+        </record>
+
+        <record id="income_demo_3" model="vs.income">
+            <field name="operation_date">2024-04-10 16:00:00</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="sum">1000.75</field>
+            <field name="description">Income 3</field>
+            <field name="category" ref="income_category_bonuses"/>
+            <field name="source_income">salary</field>
+        </record>
+
+        <record id="income_demo_4" model="vs.income">
+            <field name="operation_date">2024-04-15 10:00:00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="sum">1250.25</field>
+            <field name="description">Income 4</field>
+            <field name="category" ref="income_category_investments"/>
+            <field name="source_income">savings</field>
+        </record>
+
+<!--        <record id="income_demo_5" model="vs.income">-->
+<!--            <field name="operation_date">2024-04-20 14:00:00</field>-->
+<!--            <field name="currency_id" ref="base.USD"/>-->
+<!--            <field name="sum">1500.00</field>-->
+<!--            <field name="description">Income 5</field>-->
+<!--            <field name="category" ref="income_category_rental_income"/>-->
+<!--            <field name="source_income">deposits</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

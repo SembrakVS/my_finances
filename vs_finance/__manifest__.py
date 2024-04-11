@@ -33,6 +33,9 @@
 
     'demo': [
         'demo/vs_finans_mixin_demo.xml',
+        'demo/vs_bill_demo.xml',
+        'demo/vs_expense_demo.xml',
+        'demo/vs_income_demo.xml',
     ],
 
     'installable': True,
