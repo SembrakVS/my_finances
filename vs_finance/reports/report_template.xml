@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Report template for monthly financial report -->
+        <template id="monthly_financial_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <h2>Monthly Financial Report - <t t-esc="doc.month"/></h2>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.income_lines" t-as="income_line">
+                                    <tr>
+                                        <td><t t-esc="income_line.date"/></td>
+                                        <td><t t-esc="income_line.category"/></td>
+                                        <td><t t-esc="income_line.amount"/></td>
+                                    </tr>
+                                </t>
+                                <t t-foreach="doc.expense_lines" t-as="expense_line">
+                                    <tr>
+                                        <td><t t-esc="expense_line.date"/></td>
+                                        <td><t t-esc="expense_line.category"/></td>
+                                        <td><t t-esc="expense_line.amount"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

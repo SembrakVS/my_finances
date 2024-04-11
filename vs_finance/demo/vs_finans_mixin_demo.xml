@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Demo Data Records -->
+        <record id="demo_finans_mixin_1" model="vs.finans.mixin">
+            <field name="operation_date">2024-04-01 10:00:00</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="sum">100.00</field>
+            <field name="description">Expense for groceries</field>
+            <field name="category">expense</field>
+        </record>
+
+        <record id="demo_finans_mixin_2" model="vs.finans.mixin">
+            <field name="operation_date">2024-04-02 15:30:00</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="sum">50.00</field>
+            <field name="description">Income from freelance work</field>
+            <field name="category">income</field>
+        </record>
+
+        <record id="demo_finans_mixin_3" model="vs.finans.mixin">
+            <field name="operation_date">2024-04-03 12:45:00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="sum">80.00</field>
+            <field name="description">Expense for dinner</field>
+            <field name="category">expense</field>
+        </record>
+
+        <record id="demo_finans_mixin_4" model="vs.finans.mixin">
+            <field name="operation_date">2024-04-04 09:15:00</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="sum">200.00</field>
+            <field name="description">Income from rental property</field>
+            <field name="category">income</field>
+        </record>
+
+        <record id="demo_finans_mixin_5" model="vs.finans.mixin">
+            <field name="operation_date">2024-04-05 18:20:00</field>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="sum">120.00</field>
+            <field name="description">Expense for movie tickets</field>
+            <field name="category">expense</field>
+        </record>
+
+    </data>
+</odoo>

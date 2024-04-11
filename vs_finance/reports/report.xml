@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+        id="report_monthly_financial"
+        model="vs.finans.mixin"
+        string="Monthly Financial Report"
+        report_type="qweb-pdf"
+        name="respons.monthly_financial_report_template"
+    />
+</odoo>

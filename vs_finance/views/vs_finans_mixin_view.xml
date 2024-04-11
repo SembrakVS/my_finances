@@ -1,0 +1,82 @@
+<!-- vs_finans_mixin_views.xml -->
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_vs_finans_mixin_tree" model="ir.ui.view">
+            <field name="name">vs.finans.mixin.tree</field>
+            <field name="model">vs.finans.mixin</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="bill"/>
+                    <field name="description"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_vs_finans_mixin_form" model="ir.ui.view">
+            <field name="name">vs.finans.mixin.form</field>
+            <field name="model">vs.finans.mixin</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="operation_date"/>
+                            <field name="currency_id"/>
+                            <field name="sum"/>
+                            <field name="bill"/>
+                            <field name="description"/>
+                            <field name="category"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!-- Додавання представлення "pivot" -->
+        <record id="view_vs_finans_mixin_pivot" model="ir.ui.view">
+            <field name="name">vs.finans.mixin.pivot</field>
+            <field name="model">vs.finans.mixin</field>
+            <field name="arch" type="xml">
+                <pivot string="Financial Operations Pivot">
+                    <!-- Додайте ваші поля для представлення "pivot" тут -->
+                    <field name="operation_date" type="row"/>
+                    <field name="category" type="col"/>
+                    <field name="sum" type="measure" operator="sum"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- Додавання представлення "graph" -->
+        <record id="view_vs_finans_mixin_graph" model="ir.ui.view">
+            <field name="name">vs.finans.mixin.graph</field>
+            <field name="model">vs.finans.mixin</field>
+            <field name="arch" type="xml">
+                <graph string="Financial Operations Graph" type="bar">
+                    <!-- Додайте ваші поля для представлення "graph" тут -->
+                    <field name="operation_date" type="row"/>
+                    <field name="sum" type="measure" operator="sum"/>
+                </graph>
+            </field>
+        </record>
+
+        <!-- Action for Tree View -->
+        <record id="action_vs_finans_mixin_tree" model="ir.actions.act_window">
+            <field name="name">Financial Operations</field>
+            <field name="res_model">vs.finans.mixin</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+        </record>
+
+
+
+        <menuitem name="Finance"
+                  id="vs_finance_menu"
+                  parent="other_group_menu"
+                  action="action_vs_finans_mixin_tree"/>
+
+    </data>
+</odoo>

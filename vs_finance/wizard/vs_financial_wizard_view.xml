@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- View for Financial Wizard -->
+        <record id="view_financial_wizard_form" model="ir.ui.view">
+            <field name="name">vs.financial.wizard.form</field>
+            <field name="model">vs.financial.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Financial Wizard">
+                    <group>
+                        <field name="operation_date"/>
+                        <field name="currency_id"/>
+                        <field name="amount"/>
+                        <field name="bill"/>
+                        <field name="description"/>
+                        <field name="category"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for Financial Wizard -->
+        <record id="action_financial_wizard" model="ir.actions.act_window">
+            <field name="name">Financial Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vs.financial.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menu item to trigger the Financial Wizard -->
+        <menuitem id="menu_financial_wizard"
+                  name="Financial Wizard"
+                  parent="other_group_menu"
+                  action="action_financial_wizard"/>
+    </data>
+</odoo>

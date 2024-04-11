@@ -1,5 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_vs_costs,access_vs_costs,model_vs_costs,base.group_user,1,1,1,1
+access_vs_finans_mixin,access_vs_finans_mixin,model_vs_finans_mixin,base.group_user,1,1,1,1
+access_vs_vs_expense_category,access_vs_expense_category,model_vs_expense_category,base.group_user,1,1,1,1
+access_vs_income_category,access_vs_income_category,model_vs_income_category,base.group_user,1,1,1,1
+access_vs_expense,access_vs_expense,model_vs_expense,base.group_user,1,1,1,1
 access_vs_accumulation,access_vs_accumulation,model_vs_accumulation,base.group_user,1,1,1,1
 access_vs_income,access_vs_income,model_vs_income,base.group_user,1,1,1,1
-access_vs_bills,access_vs_bills,model_vs_bills,base.group_user,1,1,1,1
+access_vs_bill,access_vs_bill,model_vs_bill,base.group_user,1,1,1,1
+access_vs_financial_wizard,access_vs_financial_wizard,model_vs_financial_wizard,base.group_user,1,1,1,1
+,,

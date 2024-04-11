@@ -10,6 +10,8 @@
     'version': '17.0.0.0.1',
 
     'depends': [
+        'account',
+        'product',
         'base',
     ],
 
@@ -17,10 +19,20 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/main_menu.xml',
+        'data/vs_expense_data.xml',
+        'data/vs_income_data.xml',
+        'views/vs_main_menu.xml',
+        'views/vs_expense_view.xml',
+        'views/vs_income_view.xml',
+        'views/vs_bill_view.xml',
+        'views/vs_finans_mixin_view.xml',
+        'wizard/vs_financial_wizard_view.xml',
+        'reports/report_template.xml',
+        'reports/report.xml',
     ],
 
     'demo': [
+        'demo/vs_finans_mixin_demo.xml',
     ],
 
     'installable': True,

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Expense Categories -->
+        <record id="expense_category_utilities" model="vs.expense.category">
+            <field name="name">Utilities</field>
+        </record>
+
+        <record id="expense_category_groceries" model="vs.expense.category">
+            <field name="name">Groceries</field>
+        </record>
+
+        <record id="expense_category_transportation" model="vs.expense.category">
+            <field name="name">Transportation</field>
+        </record>
+
+        <record id="expense_category_entertainment" model="vs.expense.category">
+            <field name="name">Entertainment</field>
+        </record>
+
+        <record id="expense_category_healthcare" model="vs.expense.category">
+            <field name="name">Healthcare</field>
+        </record>
+
+    </data>
+</odoo>

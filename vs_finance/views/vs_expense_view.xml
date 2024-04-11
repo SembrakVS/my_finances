@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+                <!-- Expense Tree View -->
+        <record id="view_vs_expense_tree" model="ir.ui.view">
+            <field name="name">vs.expense.tree</field>
+            <field name="model">vs.expense</field>
+            <field name="arch" type="xml">
+                <tree string="Expense">
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="category"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Expense Form View -->
+        <record id="view_vs_expense_form" model="ir.ui.view">
+            <field name="name">vs.expense.form</field>
+            <field name="model">vs.expense</field>
+            <field name="arch" type="xml">
+                <form string="Expense">
+                    <sheet>
+                        <group>
+                            <field name="operation_date"/>
+                            <field name="currency_id"/>
+                            <field name="sum"/>
+                            <field name="category"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Expense Search View -->
+        <record id="view_vs_expense_search" model="ir.ui.view">
+            <field name="name">vs.expense.search</field>
+            <field name="model">vs.expense</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="category"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Expense Kanban View -->
+        <record id="view_vs_expense_kanban" model="ir.ui.view">
+            <field name="name">vs.expense.kanban</field>
+            <field name="model">vs.expense</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_content">
+                                    <div class="oe_kanban_details">
+                                        <field name="operation_date"/>
+                                        <field name="currency_id"/>
+                                        <field name="sum"/>
+                                        <field name="category"/>
+                                        <field name="description"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="vs_expense_act_window" model="ir.actions.act_window">
+            <field name="name">Expense</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vs.expense</field>
+            <field name="view_mode">tree,form,search,kanban</field>
+        </record>
+
+        <menuitem name="Expense"
+                  id="vs_expense_menu"
+                  parent="expense_group_menu"
+                  action="vs_expense_act_window"/>
+
+    </data>
+</odoo>

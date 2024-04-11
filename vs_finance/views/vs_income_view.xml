@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <!-- Income Tree View -->
+        <record id="view_vs_income_tree" model="ir.ui.view">
+            <field name="name">vs.income.tree</field>
+            <field name="model">vs.income</field>
+            <field name="arch" type="xml">
+                <tree string="Income">
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="category"/>
+                    <field name="source_income"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Income Form View -->
+        <record id="view_vs_income_form" model="ir.ui.view">
+            <field name="name">vs.income.form</field>
+            <field name="model">vs.income</field>
+            <field name="arch" type="xml">
+                <form string="Income">
+                    <sheet>
+                        <group>
+                            <field name="operation_date"/>
+                            <field name="currency_id"/>
+                            <field name="sum"/>
+                            <field name="category"/>
+                            <field name="source_income"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Income Search View -->
+        <record id="view_vs_income_search" model="ir.ui.view">
+            <field name="name">vs.income.search</field>
+            <field name="model">vs.income</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="category"/>
+                    <field name="source_income"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Income Kanban View -->
+        <record id="view_vs_income_kanban" model="ir.ui.view">
+            <field name="name">vs.income.kanban</field>
+            <field name="model">vs.income</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="operation_date"/>
+                    <field name="currency_id"/>
+                    <field name="sum"/>
+                    <field name="category"/>
+                    <field name="source_income"/>
+                    <field name="description"/>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="vs_income_act_window" model="ir.actions.act_window">
+            <field name="name">Income</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vs.income</field>
+            <field name="view_mode">tree,form,search,kanban</field>
+        </record>
+
+        <menuitem name="Income"
+                  id="vs_income_menu"
+                  parent="income_group_menu"
+                  action="vs_income_act_window"/>
+
+    </data>
+</odoo>
