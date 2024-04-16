@@ -8,11 +8,9 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="operation_date"/>
-                    <field name="currency_id"/>
+                    <field name="bill_id"/>
                     <field name="sum"/>
-                    <field name="bill"/>
-                    <field name="description"/>
-                    <field name="category"/>
+                    <field name="currency_id"/>
                 </tree>
             </field>
         </record>
@@ -23,27 +21,30 @@
             <field name="model">vs.finans.mixin</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <field name="category" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="operation_date"/>
-                            <field name="currency_id"/>
-                            <field name="sum"/>
-                            <field name="bill"/>
                             <field name="description"/>
-                            <field name="category"/>
+                        </group>
+                        <group>
+                            <field name="bill_id"/>
+                            <field name="sum"/>
+                            <field name="currency_id"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-         <!-- Додавання представлення "pivot" -->
+         <!-- "pivot" -->
         <record id="view_vs_finans_mixin_pivot" model="ir.ui.view">
             <field name="name">vs.finans.mixin.pivot</field>
             <field name="model">vs.finans.mixin</field>
             <field name="arch" type="xml">
                 <pivot string="Financial Operations Pivot">
-                    <!-- Додайте ваші поля для представлення "pivot" тут -->
                     <field name="operation_date" type="row"/>
                     <field name="category" type="col"/>
                     <field name="sum" type="measure" operator="sum"/>
@@ -51,13 +52,12 @@
             </field>
         </record>
 
-        <!-- Додавання представлення "graph" -->
+        <!-- "graph" -->
         <record id="view_vs_finans_mixin_graph" model="ir.ui.view">
             <field name="name">vs.finans.mixin.graph</field>
             <field name="model">vs.finans.mixin</field>
             <field name="arch" type="xml">
                 <graph string="Financial Operations Graph" type="bar">
-                    <!-- Додайте ваші поля для представлення "graph" тут -->
                     <field name="operation_date" type="row"/>
                     <field name="sum" type="measure" operator="sum"/>
                 </graph>
@@ -71,12 +71,9 @@
             <field name="view_mode">tree,form,pivot,graph</field>
         </record>
 
-
-
         <menuitem name="Finance"
                   id="vs_finance_menu"
                   parent="other_group_menu"
                   action="action_vs_finans_mixin_tree"/>
-
     </data>
 </odoo>

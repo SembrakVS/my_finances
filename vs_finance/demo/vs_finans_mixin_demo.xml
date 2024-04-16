@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <data>
 
         <!-- Demo Data Records -->
@@ -9,6 +9,7 @@
             <field name="sum">100.00</field>
             <field name="description">Expense for groceries</field>
             <field name="category">expense</field>
+            <field name="bill_id" ref='vs_bill_cash'/>
         </record>
 
         <record id="demo_finans_mixin_2" model="vs.finans.mixin">
@@ -17,6 +18,7 @@
             <field name="sum">50.00</field>
             <field name="description">Income from freelance work</field>
             <field name="category">income</field>
+            <field name="bill_id" ref='vs_bill_cash'/>
         </record>
 
         <record id="demo_finans_mixin_3" model="vs.finans.mixin">
@@ -25,6 +27,7 @@
             <field name="sum">80.00</field>
             <field name="description">Expense for dinner</field>
             <field name="category">expense</field>
+            <field name="bill_id" ref='vs_bill_accumulation'/>
         </record>
 
         <record id="demo_finans_mixin_4" model="vs.finans.mixin">
@@ -33,6 +36,7 @@
             <field name="sum">200.00</field>
             <field name="description">Income from rental property</field>
             <field name="category">income</field>
+            <field name="bill_id" ref='vs_bill_cashless'/>
         </record>
 
         <record id="demo_finans_mixin_5" model="vs.finans.mixin">
@@ -41,6 +45,7 @@
             <field name="sum">120.00</field>
             <field name="description">Expense for movie tickets</field>
             <field name="category">expense</field>
+            <field name="bill_id" ref='vs_bill_cashless'/>
         </record>
 
     </data>

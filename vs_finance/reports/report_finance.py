@@ -1,7 +1,8 @@
 from odoo import api, models
 
+
 class MonthlyFinancialReport(models.AbstractModel):
-    _name = 'report.respons.monthly_financial_report_template'
+    _name = 'report.finance'
     _description = 'Monthly Financial Report'
 
     @api.model
@@ -48,4 +49,3 @@ class MonthlyFinancialReport(models.AbstractModel):
             'data': data,
             'docs': report_data,
         }
-

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+    <data>
+
+        <record id="vs_bill_cash" model="vs.bill">
+            <field name="name">Cash</field>
+            <field name="amount">100.00</field>
+        </record>
+
+        <record id="vs_bill_cashless" model="vs.bill">
+            <field name="name">Cashless</field>
+            <field name="amount">150.50</field>
+        </record>
+
+        <record id="vs_bill_accumulation" model="vs.bill">
+            <field name="name">Accumulation</field>
+            <field name="amount">200.75</field>
+        </record>
+
+    </data>
+</odoo>

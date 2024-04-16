@@ -8,10 +8,11 @@
             <field name="arch" type="xml">
                 <tree string="Expense">
                     <field name="operation_date"/>
-                    <field name="currency_id"/>
+                    <field name="expense_category"/>
+                    <field name="bill_id"/>
                     <field name="sum"/>
-                    <field name="category"/>
-                    <field name="description"/>
+                    <field name="currency_id"/>
+                    <field name="partner_id"/>
                 </tree>
             </field>
         </record>
@@ -23,12 +24,19 @@
             <field name="arch" type="xml">
                 <form string="Expense">
                     <sheet>
+                        <header>
+                            <field name="category" widget="statusbar" options="{'clickable': '1'}" default="'expense'" readonly="1"/>
+                        </header>
                         <group>
                             <field name="operation_date"/>
-                            <field name="currency_id"/>
-                            <field name="sum"/>
-                            <field name="category"/>
+                            <field name="expense_category"/>
+                            <field name="partner_id"/>
                             <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="bill_id"/>
+                            <field name="sum"/>
+                            <field name="currency_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -41,11 +49,9 @@
             <field name="model">vs.expense</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="operation_date"/>
-                    <field name="currency_id"/>
-                    <field name="sum"/>
-                    <field name="category"/>
-                    <field name="description"/>
+                    <field name="partner_id"/>
+                    <field name="expense_category"/>
+<!--                    <field name="description"/>-->
                 </search>
             </field>
         </record>
@@ -62,10 +68,10 @@
                                 <div class="oe_kanban_content">
                                     <div class="oe_kanban_details">
                                         <field name="operation_date"/>
-                                        <field name="currency_id"/>
+                                        <field name="bill_id"/>
                                         <field name="sum"/>
-                                        <field name="category"/>
-                                        <field name="description"/>
+                                        <field name="currency_id"/>
+                                        <field name="partner_id"/>
                                     </div>
                                 </div>
                             </div>

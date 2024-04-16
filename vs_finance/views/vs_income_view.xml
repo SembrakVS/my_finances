@@ -9,11 +9,10 @@
             <field name="arch" type="xml">
                 <tree string="Income">
                     <field name="operation_date"/>
-                    <field name="currency_id"/>
                     <field name="sum"/>
-                    <field name="category"/>
+                    <field name="currency_id"/>
+                    <field name="category_income"/>
                     <field name="source_income"/>
-                    <field name="description"/>
                 </tree>
             </field>
         </record>
@@ -24,14 +23,20 @@
             <field name="model">vs.income</field>
             <field name="arch" type="xml">
                 <form string="Income">
+                     <header>
+                            <field name="category" widget="statusbar" options="{'clickable': '1'}" default="'income'" readonly="1"/>
+                     </header>
                     <sheet>
                         <group>
                             <field name="operation_date"/>
-                            <field name="currency_id"/>
-                            <field name="sum"/>
-                            <field name="category"/>
+                            <field name="category_income"/>
                             <field name="source_income"/>
                             <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="bill_id"/>
+                            <field name="sum"/>
+                            <field name="currency_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -44,12 +49,9 @@
             <field name="model">vs.income</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="operation_date"/>
-                    <field name="currency_id"/>
-                    <field name="sum"/>
-                    <field name="category"/>
+                    <field name="category_income"/>
                     <field name="source_income"/>
-                    <field name="description"/>
+
                 </search>
             </field>
         </record>
@@ -61,9 +63,9 @@
             <field name="arch" type="xml">
                 <kanban>
                     <field name="operation_date"/>
-                    <field name="currency_id"/>
                     <field name="sum"/>
-                    <field name="category"/>
+                    <field name="currency_id"/>
+                    <field name="category_income"/>
                     <field name="source_income"/>
                     <field name="description"/>
                 </kanban>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate='1'>
+    <data>
+        <!-- Partner Data -->
+        <record id="vs_partner_wife" model="res.partner">
+            <field name="name">Mariana Sembrak</field>
+            <field name="email">mariana.sembrak@example.com</field>
+<!--            <field name="phone">068-111-11-11</field>&ndash;&gt;-->
+<!--            <field name="birthdate">1992-11-28</field>-->
+<!--            <field name="address">S.Petliura, Lviv, Ukraine</field>-->
+<!--            <field name="gender">female</field>-->
+        </record>
+
+    </data>
+</odoo>

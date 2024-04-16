@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <data>
 
         <!-- Demo Data for Expenses -->
         <record id="expense_demo_1" model="vs.expense">
             <field name="operation_date">2024-04-01 08:00:00</field>
-            <field name="currency_id" ref="base.USD"/>
-            <field name="sum">100.00</field>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="sum">111.00</field>
             <field name="description">Expense 1</field>
-            <field name="category" ref="expense_category_utilities"/>
+            <field name="category">expense</field>
+            <field name="expense_category" ref="vs_expense_category_healthcare"/>
+            <field name="bill_id" ref='vs_bill_cash'/>
+            <field name="partner_id" ref="vs_partner_wife"/>
         </record>
 
         <record id="expense_demo_2" model="vs.expense">
@@ -16,7 +19,9 @@
             <field name="currency_id" ref="base.EUR"/>
             <field name="sum">150.50</field>
             <field name="description">Expense 2</field>
-            <field name="category" ref="expense_category_groceries"/>
+            <field name="category">expense</field>
+            <field name="expense_category" ref="vs_expense_category_groceries"/>
+            <field name="bill_id" ref='vs_bill_cashless'/>
         </record>
 
         <record id="expense_demo_3" model="vs.expense">
@@ -24,7 +29,9 @@
             <field name="currency_id" ref="base.USD"/>
             <field name="sum">200.75</field>
             <field name="description">Expense 3</field>
-            <field name="category" ref="expense_category_transportation"/>
+            <field name="category">expense</field>
+            <field name="expense_category" ref="vs_expense_category_transportation"/>
+            <field name="bill_id" ref='vs_bill_cash'/>
         </record>
 
         <record id="expense_demo_4" model="vs.expense">
@@ -32,7 +39,9 @@
             <field name="currency_id" ref="base.EUR"/>
             <field name="sum">250.25</field>
             <field name="description">Expense 4</field>
-            <field name="category" ref="expense_category_entertainment"/>
+            <field name="category">expense</field>
+            <field name="expense_category" ref="vs_finance.vs_expense_category_entertainment"/>
+            <field name="bill_id" ref='vs_bill_cashless'/>
         </record>
 
         <record id="expense_demo_5" model="vs.expense">
@@ -40,7 +49,9 @@
             <field name="currency_id" ref="base.USD"/>
             <field name="sum">300.00</field>
             <field name="description">Expense 5</field>
-            <field name="category" ref="expense_category_healthcare"/>
+            <field name="category">expense</field>
+            <field name="expense_category" ref="vs_finance.vs_expense_category_healthcare"/>
+            <field name="bill_id" ref='vs_bill_cashless'/>
         </record>
 
     </data>

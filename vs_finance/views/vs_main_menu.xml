@@ -12,7 +12,6 @@
               parent="vs_main_group_menu"
               name="Income menu" sequence="20"/>
 
-    <menuitem id='other_group_menu'
-              parent="vs_main_group_menu"
+    <menuitem id='other_group_menu' parent="vs_main_group_menu"
               name="Other" sequence="30"/>
 </odoo>

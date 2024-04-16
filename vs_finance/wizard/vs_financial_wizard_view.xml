@@ -11,7 +11,7 @@
                         <field name="operation_date"/>
                         <field name="currency_id"/>
                         <field name="amount"/>
-                        <field name="bill"/>
+                        <field name="bill_id"/>
                         <field name="description"/>
                         <field name="category"/>
                     </group>
