@@ -16,7 +16,9 @@
     'external_dependencies': {'python': [], },
 
     'data': [
+        'security/finance_groups.xml',
         'security/ir.model.access.csv',
+        'security/finance_security.xml',
         'data/vs_bill_data.xml',
         'data/vs_expense_category_data.xml',
         'data/vs_income_category_data.xml',
@@ -27,8 +29,8 @@
         'views/vs_expense_view.xml',
         'views/vs_income_view.xml',
         'wizard/vs_financial_wizard_view.xml',
-        'reports/report_template.xml',
-        'reports/report.xml',
+        'report/report_template.xml',
+        'report/report.xml',
     ],
 
     'demo': [

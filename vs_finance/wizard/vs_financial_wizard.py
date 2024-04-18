@@ -22,7 +22,7 @@ class FinancialWizard(models.TransientModel):
             'operation_date': self.operation_date,
             'currency_id': self.currency_id.id,
             'sum': self.amount,
-            'bill': self.bill.id,
+            'bill_id': self.bill_id.id,
             'description': self.description,
             'category': self.category,
         })

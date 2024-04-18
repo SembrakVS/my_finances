@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_finance" model="ir.actions.report">
+        <field name="name">Monthly Financial Report</field>
+        <field name="model">vs.finans.mixin</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vs_finance.report_template</field> <!-- Зміна значення поля report_name -->
+        <field name="report_file">vs_finance.report_template</field>
+        <field name="binding_model_id" ref="model_vs_finans_mixin"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form</field>
+    </record>
+
+
+</odoo>
