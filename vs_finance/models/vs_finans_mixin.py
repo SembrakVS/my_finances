@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import AccessError
 
 
@@ -17,7 +17,6 @@ class FinansMixin(models.Model):
     _description = 'Finans mixin'
 
     operation_date = fields.Datetime(
-        string='Operation Date',
         required=True)
     currency_id = fields.Many2one(
         'res.currency',
@@ -31,12 +30,12 @@ class FinansMixin(models.Model):
         'vs.bill',
         string='Bill')
 
-    description = fields.Text(string='Description')
+    description = fields.Text()
     category = fields.Selection([
         ('income', 'Income'),
         ('expense', 'Expense'),
         ('transfer', 'Transfer')
-    ], string='Category', default='expense', required=True)
+    ], default='expense', required=True)
 
     def compute_balance(self):
         """
@@ -51,15 +50,20 @@ class FinansMixin(models.Model):
             return 0.0
 
         # Get all financial operations for the current bill
-        operations = self.env['vs.finans.mixin'].search([('bill_id', '=', self.bill_id.id)])
+        operations = self.env['vs.finans.mixin'].search(
+            [('bill_id', '=', self.bill_id.id)])
 
         # Check if there are operations to process
         if not operations:
             return 0.0
 
         # Compute total income and expense
-        total_income = sum(operation.sum for operation in operations if operation.category == 'income')
-        total_expense = sum(operation.sum for operation in operations if operation.category == 'expense')
+        total_income = sum(
+            operation.sum for operation in operations
+            if operation.category == 'income')
+        total_expense = sum(
+            operation.sum for operation in operations
+            if operation.category == 'expense')
 
         # Compute the balance of the bill
         balance = total_income - total_expense
@@ -70,7 +74,8 @@ class FinansMixin(models.Model):
         """
         Process the financial transaction based on the category.
 
-        This method adjusts the amount of the bill based on the category of the financial transaction.
+        This method adjusts the amount of the bill based
+        on the category of the financial transaction.
         """
         # Financial transaction processing logic
         if self.category == 'expense':
@@ -92,10 +97,11 @@ class FinansMixin(models.Model):
             Record: The created record.
 
         Raises:
-            AccessError: If the user does not have permission to create records.
+            AccessError: If the user does not have permission to create records
         """
         # Check if the user has permission to create records
         if not self.env.user.has_group('vs_finance.group_financial_user'):
-            raise AccessError("You are not allowed to create records in Finans Mixin")
+            raise AccessError(_(
+                "You are not allowed to create records in Finans Mixin"))
 
         return super(FinansMixin, self).create(vals)

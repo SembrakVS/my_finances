@@ -1,4 +1,4 @@
-from odoo import  fields
+from odoo import fields
 from odoo.tests.common import TransactionCase
 
 
@@ -31,5 +31,7 @@ class TestExpense(TransactionCase):
         self.assertTrue(expense.id, "Expense record is not created")
 
         # Перевірити, чи встановлені значення категорії витрат та партнера
-        self.assertEqual(expense.expense_category.id, expense_category.id, "Expense category is not set correctly")
-        self.assertEqual(expense.partner_id.id, partner.id, "Partner is not set correctly")
+        self.assertEqual(expense.expense_category.id, expense_category.id,
+                         "Expense category is not set correctly")
+        self.assertEqual(expense.partner_id.id, partner.id,
+                         "Partner is not set correctly")

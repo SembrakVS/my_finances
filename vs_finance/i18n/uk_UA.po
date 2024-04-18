@@ -23,7 +23,7 @@ msgstr "Адміністратор"
 #. module: vs_finance
 #: model:res.groups,comment:vs_finance.group_finance_admin
 msgid "Administrators of the financial management"
-msgstr "дміністратори фінансового управління"
+msgstr "Аміністратори фінансового управління"
 
 #. module: vs_finance
 #: model:ir.model.fields,field_description:vs_finance.field_vs_accumulation__sum

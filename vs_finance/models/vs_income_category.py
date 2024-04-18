@@ -10,12 +10,12 @@ class IncomeCategory(models.Model):
     Attributes:
         _name (str): The technical name of the model.
         _description (str): The description of the model.
-        _inherit (str): The technical name of the model that this model inherits from.
+        _inherit (str): The technical name of the model that
+                        this model inherits from.
     """
 
     _name = 'vs.income.category'
     _description = 'Income Category'
     _inherit = 'vs.unique.name.mixin'
 
-    name = fields.Char(string='Name', required=True)
-
+    name = fields.Char(required=True)

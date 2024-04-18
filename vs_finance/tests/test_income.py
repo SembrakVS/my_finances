@@ -26,7 +26,9 @@ class TestIncome(TransactionCase):
         # Перевірити, чи створений дохід
         self.assertTrue(income.id, "Income record is not created")
 
-        # Перевірити, чи встановлені значення категорії доходу та джерела доходу
-        self.assertEqual(income.category_income.id, income_category.id, "Income category is not set correctly")
-        self.assertEqual(income.source_income, 'salary', "Income source is not set correctly")
-
+        # Перевірити, чи встановлені категорії доходу та джерела доходу
+        self.assertEqual(income.category_income.id, income_category.id,
+                         "Income category is not set correctly")
+        self.assertEqual(income.source_income,
+                         'salary',
+                         "Income source is not set correctly")

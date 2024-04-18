@@ -38,10 +38,13 @@ class TestFinansMixin(TransactionCase):
         actual_balance = operation1.compute_balance()
 
         # Порівняти очікуваний і отриманий залишок
-        self.assertEqual(expected_balance, actual_balance, "Computed balance is not correct")
+        self.assertEqual(expected_balance, actual_balance,
+                         "Computed balance is not correct")
 
         # Переконатися, що змінна operation2 використовується
-        self.assertTrue(operation2, "Variable operation2 is not used")
+        self.assertTrue(operation2,
+                        "Variable operation2 is not used")
+
 
 def test_process_financial_transaction(self):
     # Створити тестові дані
@@ -74,4 +77,5 @@ def test_process_financial_transaction(self):
     actual_balance = bill.amount - operation1.sum + operation2.sum
 
     # Перевірити, чи залишок правильно змінився
-    self.assertEqual(actual_balance, 70.0, "Bill amount is not updated correctly")
+    self.assertEqual(actual_balance, 70.0,
+                     "Bill amount is not updated correctly")

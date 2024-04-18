@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -6,7 +6,8 @@ class UniqueNameMixin(models.AbstractModel):
     """
     Unique Name Mixin Class.
 
-    This class provides functionality to ensure that the 'name' field is unique across records.
+    This class provides functionality to ensure that
+    the 'name' field is unique across records.
 
     Attributes:
         _name (str): The technical name of the model.
@@ -14,7 +15,7 @@ class UniqueNameMixin(models.AbstractModel):
 
     _name = 'vs.unique.name.mixin'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(required=True)
 
     @api.constrains('name')
     def _check_unique_name(self):
@@ -27,9 +28,10 @@ class UniqueNameMixin(models.AbstractModel):
             ValidationError: If a record with the same 'name' already exists.
         """
         for record in self:
-            if self.search([('name', '=', record.name), ('id', '!=', record.id)]):
-                raise ValidationError("Name must be unique!")
+            if self.search([('name', '=', record.name),
+                            ('id', '!=', record.id)]):
+                raise ValidationError(_("Name must be unique!"))
 
     _sql_constraints = [
-        ('name_unique', 'UNIQUE(name)', 'Name must be unique!'),
+        ('name_unique', 'UNIQUE(name)', _('Name must be unique!')),
     ]

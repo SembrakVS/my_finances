@@ -20,4 +20,4 @@ class CostsCategory(models.Model):
     _description = 'Expense Category'
     _inherit = 'vs.unique.name.mixin'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(required=True)

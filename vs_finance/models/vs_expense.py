@@ -21,5 +21,9 @@ class Expense(models.Model):
     _description = 'Expense'
     _inherit = 'vs.finans.mixin'
 
-    expense_category = fields.Many2one('vs.expense.category', string='Expense Category')
-    partner_id = fields.Many2one('res.partner', string='Partner')
+    expense_category = fields.Many2one(
+        'vs.expense.category',
+        )
+    partner_id = fields.Many2one(
+        'res.partner',
+        string='Partner')

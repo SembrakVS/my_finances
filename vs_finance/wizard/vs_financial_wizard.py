@@ -5,16 +5,25 @@ class FinancialWizard(models.TransientModel):
     _name = 'vs.financial.wizard'
     _description = 'Financial Wizard'
 
-    operation_date = fields.Datetime(string='Operation Date', required=True, default=fields.Datetime.now)
-    currency_id = fields.Many2one('res.currency', string='Currency', required=True)
-    amount = fields.Float(string='Amount', digits=(10, 2), required=True)
-    bill_id = fields.Many2one('vs.bill', string='Bill')
-    description = fields.Text(string='Description')
+    operation_date = fields.Datetime(
+        required=True,
+        default=fields.Datetime.now)
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Currency',
+        required=True)
+    amount = fields.Float(
+        digits=(10, 2),
+        required=True)
+    bill_id = fields.Many2one(
+        'vs.bill',
+        string='Bill')
+    description = fields.Text()
     category = fields.Selection([
         ('income', 'Income'),
         ('expense', 'Expense'),
         ('transfer', 'Transfer')
-    ], string='Category', default='expense', required=True)
+    ], default='expense', required=True)
 
     def action_confirm(self):
         # Виконати логіку підтвердження операції
